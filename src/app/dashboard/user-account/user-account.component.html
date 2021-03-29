@@ -1,0 +1,16 @@
+<div class="card text-center">
+    <div class="card-header">
+        Book store
+    </div>
+    <div class="card-body row">
+        <ul>
+            <li *ngFor="let product of booksar">
+                <h2>{{product.title}} / ₹{{product.price}}</h2>
+                <img src={{product.image}} />
+            </li>
+        </ul>
+        <!-- <div *ngFor="let book of booksar">
+            <img src={{book.image}} />
+        </div> -->
+    </div>
+</div>

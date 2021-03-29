@@ -13,14 +13,19 @@ export class LoginComponent implements OnInit {
   disablelogin: boolean = true;
   selectedJob: any;
   phoneno: any;
-  emailID: any;
-  username: any;
+  emailid: any;
+  passwd: any;
   constructor(private router: Router, public registeruserservice: LoginService) { }
 
   ngOnInit(): void {
   }
   user_login() {
-    this.router.navigate(['app/management'], { replaceUrl: true });
+    if (this.emailid == 'admin' && this.passwd == '1234') {
+      this.router.navigate(['app/management'], { replaceUrl: true });
+    }
+    else {
+      this.router.navigate(['app/user'], { replaceUrl: true });
+    }
   }
   bo_login(e) {
     this.disablelogin = false;
@@ -32,14 +37,14 @@ export class LoginComponent implements OnInit {
 
     // }
   }
-  register_form(){
-    this.disablelogin = false;
+  register_form() {
+    this.disablelogin = !this.disablelogin;
   }
-  async submitusers() {
-    console.log(this.username, this.emailID, this.phoneno, this.selectedJob);
-    await this.registeruserservice.registeruser(this.username, this.emailID, this.phoneno, this.selectedJob).then(response => {
-    });
-  }
+  // async submitusers() {
+  //   console.log(this.username, this.emailID, this.phoneno, this.selectedJob);
+  //   await this.registeruserservice.registeruser(this.username, this.emailID, this.phoneno, this.selectedJob).then(response => {
+  //   });
+  // }
   telInputObject(e) {
 
   }

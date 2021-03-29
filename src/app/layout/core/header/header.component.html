@@ -1,0 +1,12 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+    <button (click)="toggleOpened()" class="header__toggle">Toggle sidebar</button>
+    <span>My Retail Store</span>
+    <div class="navbar-nav mx-auto">
+        <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="#">Features</a>
+        <a class="nav-item nav-link" href="#">Pricing</a>
+    </div>
+    <div class="navbar-nav ml-auto">
+        <a class="nav-link logout" title="Logout" (click)="logout()"><i class="fas fa-sign-out-alt"></i>Signout</a>
+    </div>
+</nav>
